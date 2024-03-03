@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dépôts et Camions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-left: 100px;
+      margin-top: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%; /* Ajustez la largeur selon vos besoins */
+      margin-top: 20px; /* Espace supplémentaire entre la navbar et le tableau */
+      margin-right: 20px; /* Marge à droite */
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav_icon" onclick="toggleSidebar()">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <div class="navbar__left">
+        <a  href="index.html">Admin</a>
+        <a href="itinaire.html">Itinéraire</a>
+        <a class="active_link" href="#">Camion & Depot</a>
+    </div>
+    <div class="navbar__right">
+        <a href="profil.html">
+        <img width="30" src="assets/avatar.svg" alt=""  />
+        </a>
+    </div>    
+</nav>
+  <div class="container">
+    <section>
+      <h2>Dépôts</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Lieu</th>
+            <th>Niveau de remplissage (%)</th>
+          </tr>
+        </thead>
+        <tbody id="liste-depots">
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2 style="margin-top: 30px;">Camions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Lieu</th>
+            <th>Niveau de remplissage (%)</th>
+            <th>Capacité</th>
+          </tr>
+        </thead>
+        <tbody id="liste-camions">
+          <!-- Les informations sur les camions seront ajoutées ici dynamiquement -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <script>
+    // Données factices pour les dépôts et les camions (à remplacer par vos propres données)
+    const depots = [
+      { nom: "Depot 1", lieu: "Grand-Bassam, Mockey-ville", niveau: 80 },
+      { nom: "Depot 2", lieu: "Grand-Bassam, Impérial", niveau: 60 },
+      { nom: "Depot 3", lieu: "Grand-Bassam, Mockey-ville", niveau: 80 },
+      { nom: "Depot 5", lieu: "Grand-Bassam, Impérial", niveau: 60 },
+      { nom: "Depot 5", lieu: "Grand-Bassam, Mockey-ville", niveau: 80 },
+      { nom: "Depot 6", lieu: "Grand-Bassam, Impérial", niveau: 60 },
+      { nom: "Depot 7", lieu: "Grand-Bassam, Mockey-ville", niveau: 80 },
+      { nom: "Depot 8", lieu: "Grand-Bassam, Impérial", niveau: 60 },
+      { nom: "Depot 9", lieu: "Grand-Bassam, Mockey-ville", niveau: 80 },
+      { nom: "Depot 10", lieu: "Grand-Bassam, Impérial", niveau: 60 },
+      // Ajoutez d'autres dépôts ici
+    ];
+
+    const camions = [
+      { nom: "Camion 1", lieu: "Grand-Bassam, Quartier-France", capacite: 100, niveau: 70 },
+      { nom: "Camion 2", lieu: "Grand-Bassam, Modest", capacite: 120, niveau: 90 },
+      { nom: "Camion 3", lieu: "Grand-Bassam, Quartier-France", capacite: 100, niveau: 70 },
+      { nom: "Camion 4", lieu: "Grand-Bassam, Modest", capacite: 120, niveau: 90 },
+      { nom: "Camion 5", lieu: "Grand-Bassam, Quartier-France", capacite: 100, niveau: 70 },
+      { nom: "Camion 6", lieu: "Grand-Bassam, Modest", capacite: 120, niveau: 90 },
+      { nom: "Camion 7", lieu: "Grand-Bassam, Quartier-France", capacite: 100, niveau: 70 },
+      { nom: "Camion 8", lieu: "Grand-Bassam, Modest", capacite: 120, niveau: 90 },
+      { nom: "Camion 9", lieu: "Grand-Bassam, Quartier-France", capacite: 100, niveau: 70 },
+      { nom: "Camion 10", lieu: "Grand-Bassam, Modest", capacite: 120, niveau: 90 },
+      { nom: "Camion 11", lieu: "Grand-Bassam, Quartier-France", capacite: 100, niveau: 70 },
+      { nom: "Camion 12", lieu: "Grand-Bassam, Modest", capacite: 120, niveau: 90 },
+      { nom: "Camion 13", lieu: "Grand-Bassam, Quartier-France", capacite: 100, niveau: 70 },
+      { nom: "Camion 14", lieu: "Grand-Bassam, Modest", capacite: 120, niveau: 90 },
+
+      // Ajoutez d'autres camions ici
+    ];
+
+    const listeDepots = document.getElementById('liste-depots');
+    const listeCamions = document.getElementById('liste-camions');
+
+    depots.forEach(depot => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${depot.nom}</td>
+        <td>${depot.lieu}</td>
+        <td>${depot.niveau}</td>
+      `;
+      listeDepots.appendChild(row);
+    });
+
+    camions.forEach(camion => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${camion.nom}</td>
+        <td>${camion.lieu}</td>
+        <td>${camion.niveau}</td>
+        <td>${camion.capacite}</td>
+      `;
+      listeCamions.appendChild(row);
+    });
+  </script>
+</body>
+</html>

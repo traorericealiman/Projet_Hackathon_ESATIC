@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>CSS GRID DASHBOARD</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+    
+      .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+    
+      main {
+        flex-grow: 1;
+        overflow-y: auto;
+      }
+    </style>
+    
+    <style>
+  </style>
+  </head>
+  <body id="body">
+    <div class="container">
+      <nav class="navbar">
+        <div class="nav_icon" onclick="toggleSidebar()">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        <div class="navbar__left">
+          <a class="active_link" href="#">Admin</a>
+          <a href="itinaire.html">Itinéraire</a>
+          <a href="depot.html">Camion & Depot</a>
+        </div>
+        <div class="navbar__right">
+          <a href="#">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+          </a>
+          <a href="profil.html">
+            <img width="30" src="assets/avatar.svg" alt=""  />
+          </a>
+        </div>
+      </nav>
+
+      <main>
+        <div class="main__container">
+          <!-- MAIN TITLE STARTS HERE -->
+
+          <div class="main__title">
+            <img src="assets/hello.svg" alt="" />
+            <div class="main__greeting">
+              <h1>Hello</h1>
+              <p>Bienvenue dans votre tableau de bord</p>
+            </div>
+          </div>
+
+          <!-- MAIN TITLE ENDS HERE -->
+
+          <!-- MAIN CARDS STARTS HERE -->
+          <div class="main__cards">
+            <div class="card">
+              <i
+                class="fa fa-user-o fa-2x text-lightblue"
+                aria-hidden="true"
+              ></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Nombre de depot</p>
+                <span class="font-bold text-title">578</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <i class="fa fa-calendar fa-2x text-red" aria-hidden="true"></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Nombre de Camion</p>
+                <span class="font-bold text-title">2467</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <i
+                class="fa fa-video-camera fa-2x text-yellow"
+                aria-hidden="true"
+              ></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Nombre de robot trieur</p>
+                <span class="font-bold text-title">340</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <i
+                class="fa fa-thumbs-up fa-2x text-green"
+                aria-hidden="true"
+              ></i>
+              <div class="card_inner">
+                <p class="text-primary-p">Poubelle prête</p>
+                <span class="font-bold text-title">645</span>
+              </div>
+            </div>
+          </div>
+          <!-- MAIN CARDS ENDS HERE -->
+
+          <!-- CHARTS STARTS HERE -->
+          <div class="charts">
+            <div class="charts__left">
+              <div class="charts__left__title">
+                <div>
+                  <h1>Remplissage des dépots</h1>
+                  <p>Côte d'Ivoire, Grand-Bassam</p>
+                </div>
+                <i class="fa fa-usd" aria-hidden="true"></i>
+              </div>
+              <div id="apex1"></div>
+            </div>
+
+            <div class="charts__right">
+              <div class="charts__right__title">
+                <div>
+                  <h1>Urgent</h1>
+                  <p>Dépot a collecter</p>
+                </div>
+                <i class="fa fa-usd" aria-hidden="true"></i>
+              </div>
+
+              <div class="charts__right__cards">
+                <div class="card1">
+                  <h1>Depot 1</h1>
+                  <p>Grand-Bassam, Mockey-ville</p>
+                </div>
+
+                <div class="card2">
+                  <h1>Depot 2</h1>
+                  <p>Grand-Bassam, Impérial</p>
+                </div>
+
+                <div class="card3">
+                  <h1>Depot 5</h1>
+                  <p>Grand-Bassam, Modest</p>
+                </div>
+
+                <div class="card4">
+                  <h1>Depot 10</h1>
+                  <p>Grand-Bassam, Quartier-France</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- CHARTS ENDS HERE -->
+        </div>
+      </main>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
